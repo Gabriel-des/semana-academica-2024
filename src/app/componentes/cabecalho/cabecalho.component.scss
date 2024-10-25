@@ -1,0 +1,52 @@
+header {
+    background: #333;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+        width: 40%;
+        padding: .5rem 3rem;
+
+        img {
+            max-width: 20%;
+        }
+    }
+
+    nav {
+        width: 25%;
+        padding: 2rem 3rem;
+
+        button {
+            width: 150px;
+            height: 40px;
+            background-color: #014479;
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        button:hover {
+            transition: .5s;
+            background-color: #365c7a;
+            cursor: pointer;
+        }
+
+        button:nth-of-type(2) {
+            margin-left: 15px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        header .logo {
+            padding: 2rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        header .logo {
+            width: 90%;
+        }
+    }
+}

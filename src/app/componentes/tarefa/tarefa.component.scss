@@ -1,0 +1,71 @@
+$border: 1px solid #1a5989;
+
+.tarefa {
+    background-color: #f8f9fe;
+    padding: 1rem;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        "tarefa"
+        "input"
+        "botoes";
+    align-items: center;
+
+    .textos {
+        grid-area: tarefa;
+        text-align: center;
+
+        .tarefa-texto {
+            margin: 1rem auto;
+            word-wrap: break-word;
+        }
+
+        .descricao {
+            word-wrap: break-word;
+        }
+    }
+
+    .selectArea {
+        grid-area: input;
+
+        select {
+            border: $border;
+            padding: 1rem 2rem;
+            border-radius: 20px;
+            width: 100%;
+        }
+
+        select:focus {
+            border-color: #325a7a;
+        }
+
+        select:focus-visible {
+            outline: #325a7a;
+        }
+    }
+
+    .acoes {
+        display: flex;
+        justify-content: center;
+        grid-area: botoes;
+
+        .botao-excluir {
+            background: transparent;
+            border: $border;
+            cursor: pointer;
+            width: 50px;
+            padding: 10px;
+            border-radius: 10px;
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+        .botao-excluir:hover {
+            background-color: #325a7a;
+        }
+    }
+}

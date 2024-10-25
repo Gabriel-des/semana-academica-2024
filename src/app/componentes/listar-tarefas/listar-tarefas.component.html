@@ -1,0 +1,25 @@
+<section class="container">
+    <h2>Lista de tarefas</h2>
+
+    <div class="mural" *ngIf="listaTarefas.length > 0, else semTarefas">
+        <div *ngFor="let tarefa of listaTarefas">
+            <app-tarefa
+                [tarefa]="tarefa">
+            </app-tarefa>
+        </div>
+    </div>
+
+    <div class="center" *ngIf="haMaisTarefas; else semMaisTarefas">
+        <button class="carregar-mais" (click)="carregarMaisTarefas()">Carregar mais</button>
+    </div>
+</section>
+
+<ng-template #semTarefas>
+    <div class="sem-tarefas">
+        <p>Ainda não há tarefas cadastradas!</p>
+    </div>
+</ng-template>
+
+<ng-template #semMaisTarefas>
+    <p class="mensagem-center">Não há mais tarefas para exibir</p>
+</ng-template>

@@ -1,0 +1,38 @@
+.mural {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    margin: 1rem 0 2rem;
+    gap: 20px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+
+    .carregar-mais {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-color: #014479;
+        padding: 1rem 2rem;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+    }
+    
+    .carregar-mais:hover {
+        transition: .5s;
+        background-color: #365c7a;
+    }
+}
+
+.sem-pensamentos {
+    text-align: center;
+    padding: 2rem 0 5rem;
+}
+
+.mensagem-center {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

@@ -1,0 +1,26 @@
+<div class="tarefa">
+    <div class="textos">
+        <p class="tarefa-texto">{{ tarefa.tarefa }}</p>
+        <p class="descricao"><b>{{ tarefa.descricao }}</b></p>
+    </div>
+    <div class="selectArea">
+        <select
+            #select
+            id="status"
+            class="select"
+            (change)="atualizarTarefa()"
+            [disabled]="tarefa.finalizada"
+            [(ngModel)]="tarefa.status.id">
+            <option
+                *ngFor="let status of statusOptions"
+                [value]="status.id">
+                {{status.status}}
+            </option>
+        </select>
+    </div>
+    <div class="acoes">
+        <button class="botao-excluir" (click)="excluirPensamento()">
+            <img src="../../../assets/icone-excluir.png" alt="Ícone de Excluir">
+        </button>
+    </div>
+</div>

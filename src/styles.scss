@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+h1 {
+    margin: 0;
+    padding: 20px;
+	position: absolute;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+h2 {
+    margin: 0;
+    padding: 20px;
+	color: #154580;
+	font-weight: bold;
+	font-size: 2rem;
+	text-align: center;
+}
+
+.container {
+	padding-right: 1rem;
+	padding-left: 1rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@media (min-width: 576px) {
+	.container {
+		width: 540px;
+	}
+}
+
+@media (min-width: 768px) {
+	.container {
+		width: 720px;
+	}
+}
+
+@media (min-width: 992px) {
+	.container {
+		width: 960px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		width: 1140px;
+	}
+}

@@ -1,0 +1,64 @@
+<section class="container criar-task"> 
+    <header class="header">
+        <h2>
+            Adicione uma <br>
+            nova tarefa
+        </h2>
+    </header>
+
+    <form [formGroup]="formulario">
+        <label for="tarefa">Tarefa</label>
+        <input 
+            type="text"
+            class="input"
+            formControlName="tarefa"
+            id="tarefa"
+            placeholder="Digite sua tarefa">
+        <div class="mensagem__erro" 
+            *ngIf="formulario.get('tarefa')?.errors && formulario.get('tarefa')?.touched">
+            A tarefa é obrigatória!
+        </div>
+
+        <label for="descricao">Descrição</label>
+        <input 
+            type="textarea"
+            class="textarea"
+            formControlName="descricao"
+            id="descricao"
+            placeholder="Digite sua descricao">
+        <div class="mensagem__erro" 
+            *ngIf="formulario.get('descricao')?.errors && formulario.get('descricao')?.touched">
+            A descrição é obrigatória!
+        </div>
+
+        <label for="status">Status</label>
+        <select
+            id="status"
+            formControlName="status"
+            class="select">
+            <option
+                *ngFor="let status of statusOptions"
+                [value]="status.id">
+                {{status.status}}
+            </option>
+        </select>
+        <div class="mensagem__erro" 
+            *ngIf="formulario.get('status')?.errors && formulario.get('status')?.touched">
+            O status é obrigatório!
+        </div>
+
+        <div class="acoes">
+            <button
+                [disabled]="!formulario.valid"
+                (click)="criarTarefa()"
+                [ngClass]="habilitarBotao()">
+                Salvar
+            </button>
+            <button
+                class="botao"
+                (click)="cancelar()">
+                Cancelar
+            </button>
+        </div>
+    </form>
+</section>
